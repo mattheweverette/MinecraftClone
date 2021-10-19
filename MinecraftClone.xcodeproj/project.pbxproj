@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1313388271F55AF0058EC79 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1313386271F55AF0058EC79 /* Object.cpp */; };
+		D131338E271F58AF0058EC79 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131338C271F58AF0058EC79 /* Renderer.cpp */; };
+		D1313391271F5DA60058EC79 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131338F271F5DA60058EC79 /* Shader.cpp */; };
 		D1F89A44271A51F600D4B147 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1F89A43271A51F600D4B147 /* main.cpp */; };
 		D1F89BFF271A532F00D4B147 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F89BFE271A532F00D4B147 /* OpenGL.framework */; };
 		D1F89C01271A533400D4B147 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F89C00271A533400D4B147 /* IOKit.framework */; };
@@ -28,6 +31,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D1313386271F55AF0058EC79 /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		D1313387271F55AF0058EC79 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
+		D131338A271F56E40058EC79 /* VertexBufferLayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexBufferLayout.hpp; sourceTree = "<group>"; };
+		D131338C271F58AF0058EC79 /* Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
+		D131338D271F58AF0058EC79 /* Renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
+		D131338F271F5DA60058EC79 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		D1313390271F5DA60058EC79 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		D1313392271F64100058EC79 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
+		D1313393271F64190058EC79 /* shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
+		D1BDA256271E09050098A02A /* dirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirt.png; sourceTree = "<group>"; };
+		D1BDA257271E09050098A02A /* grass_side_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_side_overlay.png; sourceTree = "<group>"; };
+		D1BDA258271E09050098A02A /* grass_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_top.png; sourceTree = "<group>"; };
 		D1F89A40271A51F600D4B147 /* MinecraftClone */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MinecraftClone; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F89A43271A51F600D4B147 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D1F89A4E271A526200D4B147 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
@@ -506,6 +521,13 @@
 			children = (
 				D1F89A4C271A523F00D4B147 /* vendor */,
 				D1F89A43271A51F600D4B147 /* main.cpp */,
+				D1313386271F55AF0058EC79 /* Object.cpp */,
+				D1313387271F55AF0058EC79 /* Object.hpp */,
+				D131338A271F56E40058EC79 /* VertexBufferLayout.hpp */,
+				D131338C271F58AF0058EC79 /* Renderer.cpp */,
+				D131338D271F58AF0058EC79 /* Renderer.hpp */,
+				D131338F271F5DA60058EC79 /* Shader.cpp */,
+				D1313390271F5DA60058EC79 /* Shader.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1015,6 +1037,8 @@
 		D1F89BFB271A527200D4B147 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				D1313392271F64100058EC79 /* shader.vs */,
+				D1313393271F64190058EC79 /* shader.fs */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -1022,6 +1046,9 @@
 		D1F89BFC271A527A00D4B147 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				D1BDA256271E09050098A02A /* dirt.png */,
+				D1BDA257271E09050098A02A /* grass_side_overlay.png */,
+				D1BDA258271E09050098A02A /* grass_top.png */,
 			);
 			path = textures;
 			sourceTree = "<group>";
@@ -1095,6 +1122,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D131338E271F58AF0058EC79 /* Renderer.cpp in Sources */,
+				D1313388271F55AF0058EC79 /* Object.cpp in Sources */,
+				D1313391271F5DA60058EC79 /* Shader.cpp in Sources */,
 				D1F89A44271A51F600D4B147 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
