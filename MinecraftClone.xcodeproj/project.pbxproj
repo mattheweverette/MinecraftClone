@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D1313388271F55AF0058EC79 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1313386271F55AF0058EC79 /* Object.cpp */; };
 		D1313391271F5DA60058EC79 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131338F271F5DA60058EC79 /* Shader.cpp */; };
 		D1A3A7FA27305BDD0058AC35 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1A3A7F927305BDD0058AC35 /* Renderer.cpp */; };
 		D1A3ACF7273063C10058AC35 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1F89A4F271A526200D4B147 /* stb_image.cpp */; };
+		D1E1B5482735BCAC0058258E /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1E1B5462735BCAC0058258E /* Camera.cpp */; };
+		D1E1B54B2739EA370058258E /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1E1B5492739EA370058258E /* Window.cpp */; };
+		D1E1B54E273CA1E30058258E /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1E1B54C273CA1E30058258E /* Texture.cpp */; };
 		D1F89A44271A51F600D4B147 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1F89A43271A51F600D4B147 /* main.cpp */; };
 		D1F89BFF271A532F00D4B147 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F89BFE271A532F00D4B147 /* OpenGL.framework */; };
 		D1F89C01271A533400D4B147 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F89C00271A533400D4B147 /* IOKit.framework */; };
@@ -32,8 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D1313386271F55AF0058EC79 /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
-		D1313387271F55AF0058EC79 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
 		D131338A271F56E40058EC79 /* VertexBufferLayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexBufferLayout.hpp; sourceTree = "<group>"; };
 		D131338F271F5DA60058EC79 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		D1313390271F5DA60058EC79 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
@@ -461,8 +461,14 @@
 		D1A3ACF5273062020058AC35 /* projection.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = projection.inl; sourceTree = "<group>"; };
 		D1A3ACF6273062020058AC35 /* type_aligned.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = type_aligned.hpp; sourceTree = "<group>"; };
 		D1BDA256271E09050098A02A /* dirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirt.png; sourceTree = "<group>"; };
-		D1BDA257271E09050098A02A /* grass_side_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_side_overlay.png; sourceTree = "<group>"; };
-		D1BDA258271E09050098A02A /* grass_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_top.png; sourceTree = "<group>"; };
+		D1E1B544273571C60058258E /* grass_side.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_side.png; sourceTree = "<group>"; };
+		D1E1B545273571CE0058258E /* grass_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_top.png; sourceTree = "<group>"; };
+		D1E1B5462735BCAC0058258E /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		D1E1B5472735BCAC0058258E /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		D1E1B5492739EA370058258E /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		D1E1B54A2739EA370058258E /* Window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		D1E1B54C273CA1E30058258E /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		D1E1B54D273CA1E30058258E /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		D1F89A40271A51F600D4B147 /* MinecraftClone */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MinecraftClone; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F89A43271A51F600D4B147 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D1F89A4E271A526200D4B147 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
@@ -987,13 +993,17 @@
 			children = (
 				D1F89A4C271A523F00D4B147 /* vendor */,
 				D1F89A43271A51F600D4B147 /* main.cpp */,
-				D1313386271F55AF0058EC79 /* Object.cpp */,
-				D1313387271F55AF0058EC79 /* Object.hpp */,
 				D131338A271F56E40058EC79 /* VertexBufferLayout.hpp */,
 				D1A3A7F927305BDD0058AC35 /* Renderer.cpp */,
 				D1A3A7F827305BD00058AC35 /* Renderer.hpp */,
 				D131338F271F5DA60058EC79 /* Shader.cpp */,
 				D1313390271F5DA60058EC79 /* Shader.hpp */,
+				D1E1B5462735BCAC0058258E /* Camera.cpp */,
+				D1E1B5472735BCAC0058258E /* Camera.hpp */,
+				D1E1B5492739EA370058258E /* Window.cpp */,
+				D1E1B54A2739EA370058258E /* Window.hpp */,
+				D1E1B54C273CA1E30058258E /* Texture.cpp */,
+				D1E1B54D273CA1E30058258E /* Texture.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1038,8 +1048,8 @@
 			isa = PBXGroup;
 			children = (
 				D1BDA256271E09050098A02A /* dirt.png */,
-				D1BDA257271E09050098A02A /* grass_side_overlay.png */,
-				D1BDA258271E09050098A02A /* grass_top.png */,
+				D1E1B544273571C60058258E /* grass_side.png */,
+				D1E1B545273571CE0058258E /* grass_top.png */,
 			);
 			path = textures;
 			sourceTree = "<group>";
@@ -1114,8 +1124,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A3ACF7273063C10058AC35 /* stb_image.cpp in Sources */,
+				D1E1B54E273CA1E30058258E /* Texture.cpp in Sources */,
+				D1E1B54B2739EA370058258E /* Window.cpp in Sources */,
 				D1A3A7FA27305BDD0058AC35 /* Renderer.cpp in Sources */,
-				D1313388271F55AF0058EC79 /* Object.cpp in Sources */,
+				D1E1B5482735BCAC0058258E /* Camera.cpp in Sources */,
 				D1313391271F5DA60058EC79 /* Shader.cpp in Sources */,
 				D1F89A44271A51F600D4B147 /* main.cpp in Sources */,
 			);
