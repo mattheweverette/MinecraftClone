@@ -33,7 +33,10 @@ Window::Window(const std::string& n, int w, int h) : name(n), width(w), height(h
 
     glfwMakeContextCurrent(window);
     
-    glfwSetFramebufferSizeCallback(window, [](GLFWwindow* window, int w, int h) {
+    glfwSetFramebufferSizeCallback(window, [](GLFWwindow* win, int w, int h) {
+        Window* handler = static_cast<Window*>(glfwGetWindowUserPointer(win));
+        handler->width = w;
+        handler->height = h;
         glViewport(0, 0, w, h);
     });
 }
@@ -49,12 +52,12 @@ void Window::AddCamera(glm::vec3 p, glm::vec3 f, glm::vec3 u) {
     camera = new Camera(p, f, u, width, height);
     
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    glfwSetCursorPosCallback(window, [](GLFWwindow* w, double xPos, double yPos) {
-        Window* handler = static_cast<Window*>(glfwGetWindowUserPointer(w));
+    glfwSetCursorPosCallback(window, [](GLFWwindow* win, double xPos, double yPos) {
+        Window* handler = static_cast<Window*>(glfwGetWindowUserPointer(win));
         handler->camera->ProcessMouseMovement(xPos, yPos);
     });
-    glfwSetScrollCallback(window, [](GLFWwindow* w, double xOffset, double yOffset) {
-        Window* handler = static_cast<Window*>(glfwGetWindowUserPointer(w));
+    glfwSetScrollCallback(window, [](GLFWwindow* win, double xOffset, double yOffset) {
+        Window* handler = static_cast<Window*>(glfwGetWindowUserPointer(win));
         handler->camera->ProcessMouseScroll(yOffset);
     });
 };

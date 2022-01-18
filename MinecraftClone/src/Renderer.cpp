@@ -95,6 +95,7 @@ void Renderer::Flush() {
     glBufferSubData(GL_ARRAY_BUFFER, 0, cubeCount * 36 * sizeof(Vertex), buffer.data());
     glDrawElements(GL_TRIANGLES, cubeCount * 36, GL_UNSIGNED_INT, nullptr);
     cubeCount = 0;
+    buffer.clear();
 }
 
 void Renderer::EndBatch() {
