@@ -17,7 +17,7 @@ Renderer::Renderer(int mcc) : maxCubeCount(mcc), cubeCount(0) {
     
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, maxCubeCount * 24 * sizeof(Vertex), nullptr, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, maxCubeCount * 36 * sizeof(Vertex), nullptr, GL_DYNAMIC_DRAW);
     
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void *) offsetof(Vertex, position));
@@ -91,11 +91,24 @@ void Renderer::BeginBatch() {
 }
 
 void Renderer::Flush() {
+    GLenum err;
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cout << "begin" << err << std::endl;
+    }
     glBindVertexArray(vao);
     glBufferSubData(GL_ARRAY_BUFFER, 0, cubeCount * 36 * sizeof(Vertex), buffer.data());
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cout << "sub" << err << std::endl;
+    }
     glDrawElements(GL_TRIANGLES, cubeCount * 36, GL_UNSIGNED_INT, nullptr);
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cout << "draw" << err << std::endl;
+    }
     cubeCount = 0;
     buffer.clear();
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cout << "end" << err << std::endl;
+    }
 }
 
 void Renderer::EndBatch() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D1313391271F5DA60058EC79 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D131338F271F5DA60058EC79 /* Shader.cpp */; };
+		D138BCC9279765E4009889AB /* Noise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D138BCC7279765E4009889AB /* Noise.cpp */; };
 		D1A3A7FA27305BDD0058AC35 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1A3A7F927305BDD0058AC35 /* Renderer.cpp */; };
 		D1A3ACF7273063C10058AC35 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1F89A4F271A526200D4B147 /* stb_image.cpp */; };
 		D1E1B5482735BCAC0058258E /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1E1B5462735BCAC0058258E /* Camera.cpp */; };
@@ -39,6 +40,8 @@
 		D1313390271F5DA60058EC79 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		D1313392271F64100058EC79 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		D1313393271F64190058EC79 /* shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
+		D138BCC7279765E4009889AB /* Noise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Noise.cpp; sourceTree = "<group>"; };
+		D138BCC8279765E4009889AB /* Noise.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Noise.hpp; sourceTree = "<group>"; };
 		D1A3A7F827305BD00058AC35 /* Renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
 		D1A3A7F927305BDD0058AC35 /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
 		D1A3AB4F273062020058AC35 /* vec4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
@@ -1004,6 +1007,8 @@
 				D1E1B54A2739EA370058258E /* Window.hpp */,
 				D1E1B54C273CA1E30058258E /* Texture.cpp */,
 				D1E1B54D273CA1E30058258E /* Texture.hpp */,
+				D138BCC7279765E4009889AB /* Noise.cpp */,
+				D138BCC8279765E4009889AB /* Noise.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1123,6 +1128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D138BCC9279765E4009889AB /* Noise.cpp in Sources */,
 				D1A3ACF7273063C10058AC35 /* stb_image.cpp in Sources */,
 				D1E1B54E273CA1E30058258E /* Texture.cpp in Sources */,
 				D1E1B54B2739EA370058258E /* Window.cpp in Sources */,

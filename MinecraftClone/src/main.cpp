@@ -13,6 +13,7 @@
 #include "Window.hpp"
 #include "Texture.hpp"
 #include "Renderer.hpp"
+#include "Noise.hpp"
 
 #include "stb_image/stb_image.h"
 #include "glm/glm.hpp"
@@ -29,13 +30,17 @@ int main() {
     
     glEnable(GL_DEPTH_TEST);
     
-    const int cubeCount = 5;
+    const int cubeCount = 10 * 10;
     float positions[cubeCount][3];
     
-    for (int i = 0; i < cubeCount; i++) {
-        positions[i][0] = (float) i;
-        positions[i][1] = (float) i;
-        positions[i][2] = 0.0f;
+    Noise noise(4);
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            positions[10 * i + j][0] = (float) i;
+            positions[10 * i + j][1] = std::floor(noise.GetValue((float)3 * i / 10, (float)3 * j / 10));
+            positions[10 * i + j][2] = (float) -j;
+        }
     }
     
     Texture textures[3] {
@@ -79,7 +84,7 @@ int main() {
         for (int i = 0; i < cubeCount; i++)
             renderer.AddCube(positions[i]);
         renderer.EndBatch();
-        
+                
         window.SwapBuffers();
 
         glfwPollEvents();
